@@ -1,6 +1,7 @@
 from vk_api.exceptions import ApiError
 from random import randint
 from config import *
+from data.constant import *
 import os
 
 def getcd():
@@ -11,7 +12,7 @@ def getcd():
     path_result = ''
     for path_dir in path_list:
         path_result += f'{path_dir}'
-        if root_name in path_dir or 'VkScheduleSender' in path_dir:
+        if root_name in path_dir:
             break
         path_result += '/'
 

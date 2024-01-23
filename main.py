@@ -7,6 +7,7 @@ from db import DataBase
 from lib import *
 
 from config import *
+from data.constant import *
 
 primal_path = getcd()
 db_path = f'{primal_path}/data'

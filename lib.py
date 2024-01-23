@@ -1,6 +1,21 @@
 from vk_api.exceptions import ApiError
 from random import randint
 from config import *
+import os
+
+def getcd():
+    path_here = os.getcwd()
+    path_here = path_here.replace('\\', '/')
+    path_list = path_here.split('/')
+
+    path_result = ''
+    for path_dir in path_list:
+        path_result += f'{path_dir}'
+        if root_name in path_dir or 'VkScheduleSender' in path_dir:
+            break
+        path_result += '/'
+
+    return path_result
 
 def generate_random():
     return randint(0, 1000000)

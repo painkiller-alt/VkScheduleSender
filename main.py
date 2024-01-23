@@ -8,6 +8,8 @@ from lib import *
 
 from config import *
 
+primal_path = getcd()
+db_path = f'{primal_path}/data'
 db = DataBase(db_path)
 sched = BackgroundScheduler()  # Таймер
 vk_session = VkApi(token=admin_token)

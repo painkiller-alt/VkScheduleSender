@@ -5,7 +5,7 @@ def_peerid = 2000000000
 search_count = 10
 urls_parse = True
 
-db_path = r"C:\Users\dimka\PycharmProjects\VkSender\data"
+root_name = "VkSender"
 
 on_add_message = """
 Привет!

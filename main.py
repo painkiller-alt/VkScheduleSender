@@ -1,6 +1,6 @@
 from vk_api import VkApi
 from vk_api.bot_longpoll import VkBotLongPoll, VkBotEvent, VkBotEventType
-from vk_api.exceptions import ApiError
+#from vk_api.exceptions import ApiError
 
 from apscheduler.schedulers.background import BackgroundScheduler  # Таймер
 from db import DataBase
@@ -17,8 +17,11 @@ vk_session = VkApi(token=admin_token)
 longpoll = VkBotLongPoll(vk=vk_session, group_id=groupid)
 vk = vk_session.get_api()
 
-if not urls_parse:
-    urls = get_ids(vk)
+servicevk_session = VkApi(app_id=51792781, token=service_token, client_secret="WglFxfGsYCVDcswQYTqB")
+servicevk = vk_session.get_api()
+
+if urls_parse:
+    urls = get_ids(service_token)
 else:
     urls = {
         '1': 'https://vk.com/ktskursk?w=wall-145391943_19672',

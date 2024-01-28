@@ -2,6 +2,7 @@ from vk_api.exceptions import ApiError
 from random import randint
 from config import *
 from data.constant import *
+import requests
 import os
 
 def getcd():
@@ -36,10 +37,17 @@ def check_admin(vk, groupid):
                 if admin:
                     print('admined')
 
-def get_ids(vk):
+def get_ids(service_token):
     result = {}
 
-    posts = vk.wall.get(owner_id=colleges_ids["КТС"], count=search_count)["items"]
+    url = f'https://api.vk.com/method/wall.get?' \
+          f'access_token={service_token}&' \
+          f'v=5.199&' \
+          f'owner_id={colleges_ids["КТС"]}&' \
+          f'count={search_count}'
+
+    resp = requests.get(url)
+    posts = resp.json()['response']['items']
 
     for post in posts:
         text = post['text']

@@ -1,3 +1,5 @@
+import time
+
 from vk_api import VkApi
 from vk_api.bot_longpoll import VkBotLongPoll, VkBotEvent, VkBotEventType
 #from vk_api.exceptions import ApiError
@@ -45,29 +47,39 @@ sched.add_job(check_posts, trigger="interval", **check_interval)
 
 sched.start()
 
-for event in longpoll.listen():
-    if event.type == VkBotEventType.MESSAGE_NEW:
-        action = event.message.get('action')
-        peer_id = event.message.get('peer_id')
-        message = event.message
-        if action:
-            if action.get('type') == "chat_invite_user" and on_add_message:
-                db.data[peer_id] = {}
-                db.save()
-                vk.messages.send(peer_id=peer_id, random_id=generate_random(), message=on_add_message)
-        else:
-            if message.text.startswith('/course'):
-                sp = message.text.split(" ", maxsplit=1)
-                if len(sp) > 1:
-                    course = sp[1]
+def main():
+    for event in longpoll.listen():
+        if event.type == VkBotEventType.MESSAGE_NEW:
+            action = event.message.get('action')
+            peer_id = event.message.get('peer_id')
+            message = event.message
+            if action:
+                if action.get('type') == "chat_invite_user" and on_add_message:
+                    db.data[peer_id] = {}
+                    db.save()
+                    vk.messages.send(peer_id=peer_id, random_id=generate_random(), message=on_add_message)
+            else:
+                if message.text.startswith('/course'):
+                    sp = message.text.split(" ", maxsplit=1)
+                    if len(sp) > 1:
+                        course = sp[1]
 
-                    if course not in ["1", "2", "3", "4", "5"]:
-                        vk.messages.send(peer_id=peer_id, random_id=generate_random(), message=invalid_syntax_message)
-                    else:
-                        if not db.data.get(peer_id):
-                            db.data[peer_id] = {}
+                        if course not in ["1", "2", "3", "4", "5"]:
+                            vk.messages.send(peer_id=peer_id, random_id=generate_random(),
+                                             message=invalid_syntax_message)
+                        else:
+                            if not db.data.get(peer_id):
+                                db.data[peer_id] = {}
 
-                        to_add = "4" if course == "5" else course
-                        db.data[peer_id].update({"course": to_add})
-                        db.save()
-                        vk.messages.send(peer_id=peer_id, random_id=generate_random(), message=f"Ваш курс - {course}. Если все верно, можете снять права администратора - я не смогу читать вашу беседу. Когда выйдет новое официальное расписание, я перешлю его сюда.")
+                            to_add = "4" if course == "5" else course
+                            db.data[peer_id].update({"course": to_add})
+                            db.save()
+                            vk.messages.send(peer_id=peer_id, random_id=generate_random(),
+                                             message=f"Ваш курс - {course}. Если все верно, можете снять права администратора - я не смогу читать вашу беседу. Когда выйдет новое официальное расписание, я перешлю его сюда.")
+
+if __name__ == "__main__":
+    while True:
+        try:
+            main()
+        except:
+            time.sleep(10)

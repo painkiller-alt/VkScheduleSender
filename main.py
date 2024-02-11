@@ -7,9 +7,12 @@ from vk_api.bot_longpoll import VkBotLongPoll, VkBotEvent, VkBotEventType
 from apscheduler.schedulers.background import BackgroundScheduler  # Таймер
 from db import DataBase
 from lib import *
+from log import log
 
 from config import *
 from data.constant import *
+
+import traceback as tr
 
 primal_path = getcd()
 db_path = f'{primal_path}/data'
@@ -35,7 +38,7 @@ else:
 def check_posts():
     for course, url in urls.items():
         if url not in db.parsed:
-            print(url)
+            log(url)
             db.parsed[url] = course
             db.save()
             for peer_id, group in db.data.items():
@@ -81,5 +84,6 @@ if __name__ == "__main__":
     while True:
         try:
             main()
-        except:
+        except Exception as e:
+            log(tr.format_exc())
             time.sleep(10)

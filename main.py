@@ -1,29 +1,24 @@
 import time
 
 from vk_api import VkApi
-from vk_api.bot_longpoll import VkBotLongPoll, VkBotEvent, VkBotEventType
+from vk_api.bot_longpoll import VkBotLongPoll, VkBotEventType
 #from vk_api.exceptions import ApiError
 
 from apscheduler.schedulers.background import BackgroundScheduler  # Таймер
 from db import DataBase
 from lib import *
-from log import log
+from log import log, logging
 
 from config import *
 from data.constant import *
 
 import traceback as tr
 
+logging.getLogger('apscheduler.executors.default').propagate = False  # Отключение логгинга scheduler-а
 primal_path = getcd()
 db_path = f'{primal_path}/data'
 db = DataBase(db_path)
 sched = BackgroundScheduler()  # Таймер
-vk_session = VkApi(token=admin_token)
-longpoll = VkBotLongPoll(vk=vk_session, group_id=groupid)
-vk = vk_session.get_api()
-
-servicevk_session = VkApi(app_id=51792781, token=service_token, client_secret="WglFxfGsYCVDcswQYTqB")
-servicevk = vk_session.get_api()
 
 if urls_parse:
     urls = get_ids(service_token)
@@ -83,6 +78,12 @@ def main():
 if __name__ == "__main__":
     while True:
         try:
+            vk_session = VkApi(token=admin_token)
+            longpoll = VkBotLongPoll(vk=vk_session, group_id=groupid)
+            vk = vk_session.get_api()
+
+            servicevk_session = VkApi(app_id=51792781, token=service_token, client_secret="WglFxfGsYCVDcswQYTqB")
+            servicevk = vk_session.get_api()
             main()
         except Exception as e:
             log(tr.format_exc())

@@ -1,0 +1,25 @@
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Added job "check_posts" to job store "default"
+INFO:apscheduler.scheduler:Scheduler started
+INFO:apscheduler.executors.default:Running job "check_posts (trigger: interval[0:00:03], next run at: 2024-02-11 18:37:35 MSK)" (scheduled at 2024-02-11 18:37:35.535237+03:00)
+INFO:root:February 11 | 18:37:35 --> https://vk.com/ktskursk?w=wall-145391943_19989
+INFO:root:February 11 | 18:37:35 --> https://vk.com/ktskursk?w=wall-145391943_19988
+INFO:root:February 11 | 18:37:35 --> https://vk.com/ktskursk?w=wall-145391943_19987
+INFO:root:February 11 | 18:37:35 --> https://vk.com/ktskursk?w=wall-145391943_19986
+INFO:apscheduler.executors.default:Job "check_posts (trigger: interval[0:00:03], next run at: 2024-02-11 18:37:38 MSK)" executed successfully
+INFO:apscheduler.executors.default:Running job "check_posts (trigger: interval[0:00:03], next run at: 2024-02-11 18:37:41 MSK)" (scheduled at 2024-02-11 18:37:38.535237+03:00)
+INFO:apscheduler.executors.default:Job "check_posts (trigger: interval[0:00:03], next run at: 2024-02-11 18:37:41 MSK)" executed successfully
+INFO:apscheduler.executors.default:Running job "check_posts (trigger: interval[0:00:03], next run at: 2024-02-11 18:37:44 MSK)" (scheduled at 2024-02-11 18:37:41.535237+03:00)
+INFO:apscheduler.executors.default:Job "check_posts (trigger: interval[0:00:03], next run at: 2024-02-11 18:37:44 MSK)" executed successfully
+INFO:apscheduler.executors.default:Running job "check_posts (trigger: interval[0:00:03], next run at: 2024-02-11 18:37:47 MSK)" (scheduled at 2024-02-11 18:37:44.535237+03:00)
+INFO:apscheduler.executors.default:Job "check_posts (trigger: interval[0:00:03], next run at: 2024-02-11 18:37:47 MSK)" executed successfully
+INFO:apscheduler.executors.default:Running job "check_posts (trigger: interval[0:00:03], next run at: 2024-02-11 18:37:50 MSK)" (scheduled at 2024-02-11 18:37:47.535237+03:00)
+INFO:apscheduler.executors.default:Job "check_posts (trigger: interval[0:00:03], next run at: 2024-02-11 18:37:50 MSK)" executed successfully
+INFO:apscheduler.executors.default:Running job "check_posts (trigger: interval[0:00:03], next run at: 2024-02-11 18:37:53 MSK)" (scheduled at 2024-02-11 18:37:50.535237+03:00)
+INFO:apscheduler.executors.default:Job "check_posts (trigger: interval[0:00:03], next run at: 2024-02-11 18:37:53 MSK)" executed successfully
+INFO:apscheduler.executors.default:Running job "check_posts (trigger: interval[0:00:03], next run at: 2024-02-11 18:37:56 MSK)" (scheduled at 2024-02-11 18:37:53.535237+03:00)
+INFO:apscheduler.executors.default:Job "check_posts (trigger: interval[0:00:03], next run at: 2024-02-11 18:37:56 MSK)" executed successfully
+INFO:apscheduler.executors.default:Running job "check_posts (trigger: interval[0:00:03], next run at: 2024-02-11 18:37:59 MSK)" (scheduled at 2024-02-11 18:37:56.535237+03:00)
+INFO:apscheduler.executors.default:Job "check_posts (trigger: interval[0:00:03], next run at: 2024-02-11 18:37:59 MSK)" executed successfully
+INFO:apscheduler.executors.default:Running job "check_posts (trigger: interval[0:00:03], next run at: 2024-02-11 18:38:02 MSK)" (scheduled at 2024-02-11 18:37:59.535237+03:00)
+INFO:apscheduler.executors.default:Job "check_posts (trigger: interval[0:00:03], next run at: 2024-02-11 18:38:02 MSK)" executed successfully

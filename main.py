@@ -31,6 +31,7 @@ else:
     }
 
 def check_posts():
+    log("Проверено")
     for course, url in urls.items():
         if url not in db.parsed:
             log(url)

@@ -78,6 +78,7 @@ def main():
 if __name__ == "__main__":
     while True:
         try:
+            log("Запуск")
             vk_session = VkApi(token=admin_token)
             longpoll = VkBotLongPoll(vk=vk_session, group_id=groupid)
             vk = vk_session.get_api()

@@ -17,7 +17,7 @@ invalid_syntax_message = "Неверный синтаксис, использу�
 ads_message = "Поддерживается https://t.me/ktctimetablebot"
 
 check_interval = {
-    "seconds": 40
+    "seconds": 60
 }
 
 courses = {

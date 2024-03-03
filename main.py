@@ -32,7 +32,12 @@ else:
 
 def check_posts():
     log("Проверено")
-    for course, url in urls.items():
+    if urls_parse:
+        parse_urls = get_ids(service_token)
+    else:
+        parse_urls = urls
+
+    for course, url in parse_urls.items():
         if url not in db.parsed:
             log(url)
             db.parsed[url] = course

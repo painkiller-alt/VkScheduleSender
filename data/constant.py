@@ -1,7 +1,6 @@
 groupid = 219068570
 def_peerid = 2000000000
 search_count = 10
-urls_parse = True
 
 on_add_message = """
 Привет!

@@ -20,22 +20,11 @@ db_path = f'{primal_path}/data'
 db = DataBase(db_path)
 sched = BackgroundScheduler()  # Таймер
 
-if urls_parse:
-    urls = get_ids(service_token)
-else:
-    urls = {
-        '1': 'https://vk.com/ktskursk?w=wall-145391943_19672',
-        '2': 'https://vk.com/ktskursk?w=wall-145391943_19673',
-        '3': 'https://vk.com/ktskursk?w=wall-145391943_19674',
-        '4': 'https://vk.com/ktskursk?w=wall-145391943_19675'
-    }
+urls = get_ids(service_token)
 
 def check_posts():
     log("Проверено")
-    if urls_parse:
-        parse_urls = get_ids(service_token)
-    else:
-        parse_urls = urls
+    parse_urls = get_ids(service_token)
 
     for course, url in parse_urls.items():
         if url not in db.parsed:
@@ -55,7 +44,7 @@ def main():
     for event in longpoll.listen():
         if event.type == VkBotEventType.MESSAGE_NEW:
             action = event.message.get('action')
-            peer_id = event.message.get('peer_id')
+            peer_id = str(event.message.get('peer_id'))
             message = event.message
             if action:
                 if action.get('type') == "chat_invite_user" and on_add_message:
@@ -78,8 +67,13 @@ def main():
                             to_add = "4" if course == "5" else course
                             db.data[peer_id].update({"course": to_add})
                             db.save()
-                            vk.messages.send(peer_id=peer_id, random_id=generate_random(),
-                                             message=f"Ваш курс - {course}. Если все верно, можете снять права администратора - я не смогу читать вашу беседу. Когда выйдет новое официальное расписание, я перешлю его сюда.")
+
+                            if int(peer_id) >= 2000000000:
+                                vk.messages.send(peer_id=peer_id, random_id=generate_random(),
+                                                 message=f"Ваш курс - {course}. Если все верно, можете снять права администратора - я не смогу читать вашу беседу. Когда выйдет новое официальное расписание, я перешлю его сюда.")
+                            else:
+                                vk.messages.send(peer_id=peer_id, random_id=generate_random(),
+                                                 message=f"Ваш курс - {course}. Когда выйдет новое официальное расписание, я перешлю его сюда.")
 
 if __name__ == "__main__":
     while True:

@@ -31,3 +31,29 @@ INFO:root:February 25 | 14:29:50 --> https://vk.com/ktskursk?w=wall-145391943_20
 INFO:root:February 25 | 14:29:50 --> https://vk.com/ktskursk?w=wall-145391943_20321
 INFO:root:February 25 | 14:29:50 --> https://vk.com/ktskursk?w=wall-145391943_20320
 INFO:root:February 25 | 14:29:50 --> https://vk.com/ktskursk?w=wall-145391943_20319
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Added job "check_posts" to job store "default"
+INFO:apscheduler.scheduler:Scheduler started
+INFO:root:March 05 | 16:03:05 --> Запуск
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Added job "check_posts" to job store "default"
+INFO:apscheduler.scheduler:Scheduler started
+INFO:root:March 05 | 16:03:47 --> Запуск
+INFO:root:March 05 | 16:04:47 --> Проверено
+INFO:root:March 05 | 16:04:47 --> https://vk.com/ktskursk?w=wall-145391943_20399
+INFO:root:March 05 | 16:04:47 --> https://vk.com/ktskursk?w=wall-145391943_20398
+INFO:root:March 05 | 16:04:47 --> https://vk.com/ktskursk?w=wall-145391943_20397
+INFO:root:March 05 | 16:04:48 --> https://vk.com/ktskursk?w=wall-145391943_20396
+INFO:root:March 05 | 16:05:47 --> Проверено
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Added job "check_posts" to job store "default"
+INFO:apscheduler.scheduler:Scheduler started
+INFO:root:March 05 | 16:07:32 --> Запуск
+INFO:root:March 05 | 16:08:33 --> Проверено
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Added job "check_posts" to job store "default"
+INFO:apscheduler.scheduler:Scheduler started
+INFO:root:March 05 | 16:08:55 --> Запуск
+INFO:root:March 05 | 16:09:55 --> Проверено
+INFO:root:March 05 | 16:10:55 --> Проверено
+INFO:root:March 05 | 16:11:55 --> Проверено

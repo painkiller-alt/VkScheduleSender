@@ -1,8 +1,11 @@
 import time
 
+import requests
 from vk_api import VkApi
 from vk_api.bot_longpoll import VkBotLongPoll, VkBotEventType
 #from vk_api.exceptions import ApiError
+from keyboards import kboards
+import json
 
 from apscheduler.schedulers.background import BackgroundScheduler  # Таймер
 from db import DataBase
@@ -31,8 +34,8 @@ def check_posts():
             log(url)
             db.parsed[url] = course
             db.save()
-            for peer_id, group in db.data.items():
-                if group.get('course') == course:
+            for peer_id, data in db.data.items():
+                if data.get('course') == course and data.get("timetable"):
                     subject = url.split('=')[1]
                     repost(vk, int(peer_id), subject)
 
@@ -43,8 +46,8 @@ sched.start()
 def main():
     for event in longpoll.listen():
         if event.type == VkBotEventType.MESSAGE_NEW:
-            action = event.message.get('action')
             peer_id = str(event.message.get('peer_id'))
+            action = event.message.get('action')
             message = event.message
             if action:
                 if action.get('type') == "chat_invite_user" and on_add_message:
@@ -52,7 +55,10 @@ def main():
                     db.save()
                     vk.messages.send(peer_id=peer_id, random_id=generate_random(), message=on_add_message)
             else:
+                # Если написали команду /course
                 if message.text.startswith('/course'):
+                    if not db.data[peer_id].get("repls"): db.data[peer_id].update({"repls": True})
+                    if not db.data[peer_id].get("timetable"): db.data[peer_id].update({"timetable": True})
                     sp = message.text.split(" ", maxsplit=1)
                     if len(sp) > 1:
                         course = sp[1]
@@ -69,11 +75,45 @@ def main():
                             db.save()
 
                             if int(peer_id) >= 2000000000:
-                                vk.messages.send(peer_id=peer_id, random_id=generate_random(),
-                                                 message=f"Ваш курс - {course}. Если все верно, можете снять права администратора - я не смогу читать вашу беседу. Когда выйдет новое официальное расписание, я перешлю его сюда.")
+                                msg = f"Ваш курс - {course}. Если все верно, можете снять права администратора - я не смогу читать вашу беседу. Когда выйдет новое официальное расписание, я перешлю его сюда. \n\nПересылать:"
                             else:
-                                vk.messages.send(peer_id=peer_id, random_id=generate_random(),
-                                                 message=f"Ваш курс - {course}. Когда выйдет новое официальное расписание, я перешлю его сюда.")
+                                msg = f"Ваш курс - {course}. Когда выйдет новое официальное расписание, я перешлю его сюда. \n\nПересылать:"
+
+                            msg_id = generate_random()
+                            vk.messages.send(
+                                peer_id=peer_id,
+                                random_id=msg_id,
+                                message=msg,
+                                keyboard=kboards.menu
+                            )
+        elif event.type == VkBotEventType.MESSAGE_EVENT:
+            vk.messages.sendMessageEventAnswer(
+                      event_id=event.object.event_id,
+                      user_id=event.object.user_id,
+                      peer_id=event.object.peer_id,
+                      event_data=json.dumps({"type": "show_snackbar", "text": "Настройки применены"}))
+
+            peer_id = str(event.object.get('peer_id'))
+            call = event.object.payload.get('type')
+            # Отвечаем на callback
+            if call in calls:
+                setting = call
+
+                db.data[peer_id][setting] = not db.data[peer_id][setting]
+                db.save()
+
+                if setting == "timetable":
+                    rus_setting = "Расписание"
+                else:
+                    rus_setting = "Замены"
+
+                vk.messages.send(
+                    peer_id=peer_id,
+                    random_id=generate_random(),
+                    message=f"{rus_setting}: {'Вкл.' if db.data[peer_id][setting] else 'Выкл.'}"
+                )
+
+
 
 if __name__ == "__main__":
     while True:

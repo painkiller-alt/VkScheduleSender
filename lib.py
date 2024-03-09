@@ -4,6 +4,7 @@ from config import *
 from data.constant import *
 import requests
 import os
+import time
 
 def getcd():
     path_here = os.getcwd()
@@ -18,6 +19,9 @@ def getcd():
         path_result += '/'
 
     return path_result
+
+def current_milli_time():
+    return int(round(time.time() * 1000))
 
 def generate_random():
     return randint(0, 1000000)

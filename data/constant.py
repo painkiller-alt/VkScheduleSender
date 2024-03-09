@@ -15,6 +15,8 @@ on_add_message = """
 invalid_syntax_message = "Неверный синтаксис, используйте '/course x', где вместо x - номер вашего курса от 1 до 5"
 ads_message = "Поддерживается https://t.me/ktctimetablebot"
 
+calls = ("timetable", "repls")
+
 check_interval = {
     "seconds": 60
 }

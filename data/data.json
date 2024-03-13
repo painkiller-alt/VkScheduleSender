@@ -1,13 +1,7 @@
 {
-    "2000000001": {
-        "course": "2",
-        "repls": true,
-        "timetable": false
-    },
-    "2000000002": {},
     "451418349": {
-        "course": "2",
         "repls": true,
-        "timetable": true
+        "timetable": true,
+        "group": "ИСП-2.2"
     }
 }

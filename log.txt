@@ -873,3 +873,325 @@ INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly schedul
 INFO:apscheduler.scheduler:Added job "check_posts" to job store "default"
 INFO:apscheduler.scheduler:Scheduler started
 INFO:root:March 09 | 13:50:29 --> Запуск
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Added job "check_posts" to job store "default"
+INFO:apscheduler.scheduler:Added job "check_posts" to job store "default"
+INFO:apscheduler.scheduler:Scheduler started
+INFO:root:March 12 | 08:41:51 --> Запуск
+INFO:root:March 12 | 08:42:51 --> Проверено
+INFO:root:March 12 | 08:42:52 --> https://vk.com/ktskursk?w=wall-145391943_20519
+INFO:root:March 12 | 08:42:52 --> https://vk.com/ktskursk?w=wall-145391943_20518
+INFO:root:March 12 | 08:42:52 --> https://vk.com/ktskursk?w=wall-145391943_20517
+INFO:root:March 12 | 08:42:52 --> https://vk.com/ktskursk?w=wall-145391943_20516
+INFO:root:March 12 | 08:43:01 --> Проверено
+INFO:root:March 12 | 08:43:51 --> Проверено
+INFO:root:March 12 | 08:44:11 --> Проверено
+INFO:root:March 12 | 08:44:51 --> Проверено
+INFO:root:March 12 | 08:45:21 --> Проверено
+INFO:root:March 12 | 08:45:51 --> Проверено
+INFO:root:March 12 | 08:46:31 --> Проверено
+INFO:root:March 12 | 08:46:51 --> Проверено
+INFO:root:March 12 | 08:47:41 --> Проверено
+INFO:root:March 12 | 08:47:51 --> Проверено
+INFO:root:March 12 | 08:48:51 --> Проверено
+INFO:root:March 12 | 08:48:51 --> Проверено
+INFO:root:March 12 | 08:49:51 --> Проверено
+INFO:root:March 12 | 08:50:01 --> Проверено
+INFO:root:March 12 | 08:50:51 --> Проверено
+INFO:root:March 12 | 08:51:11 --> Проверено
+INFO:root:March 12 | 08:51:51 --> Проверено
+INFO:root:March 12 | 08:52:21 --> Проверено
+INFO:root:March 12 | 08:52:52 --> Проверено
+INFO:root:March 12 | 08:53:31 --> Проверено
+INFO:root:March 12 | 08:53:51 --> Проверено
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Added job "check_posts" to job store "default"
+INFO:apscheduler.scheduler:Added job "check_posts" to job store "default"
+INFO:apscheduler.scheduler:Scheduler started
+INFO:root:March 12 | 08:54:18 --> Запуск
+INFO:root:March 12 | 08:55:18 --> Проверено
+INFO:root:March 12 | 08:55:28 --> Проверено
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Added job "check_posts" to job store "default"
+INFO:apscheduler.scheduler:Added job "check_repls" to job store "default"
+INFO:apscheduler.scheduler:Scheduler started
+INFO:root:March 12 | 08:55:55 --> Запуск
+INFO:root:March 12 | 08:56:55 --> Проверено
+INFO:root:March 12 | 08:57:55 --> Проверено
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Added job "check_posts" to job store "default"
+INFO:apscheduler.scheduler:Added job "check_repls" to job store "default"
+INFO:apscheduler.scheduler:Scheduler started
+INFO:root:March 12 | 08:58:49 --> Запуск
+INFO:root:March 12 | 08:59:49 --> Проверено
+INFO:root:March 12 | 09:00:49 --> Проверено
+INFO:root:March 12 | 09:01:49 --> Проверено
+INFO:root:March 12 | 09:02:49 --> Проверено
+INFO:root:March 12 | 09:03:49 --> Проверено
+INFO:root:March 12 | 09:04:49 --> Проверено
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Added job "check_posts" to job store "default"
+INFO:apscheduler.scheduler:Added job "check_repls" to job store "default"
+INFO:apscheduler.scheduler:Scheduler started
+INFO:root:March 12 | 09:05:47 --> Запуск
+INFO:root:March 12 | 09:05:47 --> Traceback (most recent call last):
+  File "C:\Users\dimka\PycharmProjects\VkSender\main.py", line 145, in <module>
+    vk_session = VkApi(token=admin_token, v="5.199")
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: VkApi.__init__() got an unexpected keyword argument 'v'
+
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Added job "check_posts" to job store "default"
+INFO:apscheduler.scheduler:Added job "check_repls" to job store "default"
+INFO:apscheduler.scheduler:Scheduler started
+INFO:root:March 12 | 09:06:30 --> Запуск
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Added job "check_posts" to job store "default"
+INFO:apscheduler.scheduler:Added job "check_repls" to job store "default"
+INFO:apscheduler.scheduler:Scheduler started
+INFO:root:March 12 | 09:06:59 --> Запуск
+INFO:root:March 12 | 09:07:59 --> Проверено
+INFO:root:March 12 | 09:08:59 --> Проверено
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Added job "check_posts" to job store "default"
+INFO:apscheduler.scheduler:Added job "check_repls" to job store "default"
+INFO:apscheduler.scheduler:Scheduler started
+INFO:root:March 12 | 09:35:45 --> Запуск
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Added job "check_posts" to job store "default"
+INFO:apscheduler.scheduler:Added job "check_repls" to job store "default"
+INFO:apscheduler.scheduler:Scheduler started
+INFO:root:March 12 | 09:36:13 --> Запуск
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Added job "check_posts" to job store "default"
+INFO:apscheduler.scheduler:Added job "check_repls" to job store "default"
+INFO:apscheduler.scheduler:Scheduler started
+INFO:root:March 12 | 09:36:28 --> Запуск
+INFO:root:March 12 | 09:37:28 --> Проверено
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Added job "check_posts" to job store "default"
+INFO:apscheduler.scheduler:Added job "check_repls" to job store "default"
+INFO:apscheduler.scheduler:Scheduler started
+INFO:root:March 12 | 09:38:18 --> Запуск
+INFO:root:March 12 | 09:39:18 --> Проверено
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Added job "check_posts" to job store "default"
+INFO:apscheduler.scheduler:Added job "check_repls" to job store "default"
+INFO:apscheduler.scheduler:Scheduler started
+INFO:root:March 12 | 09:39:50 --> Запуск
+INFO:root:March 12 | 09:40:50 --> Проверено
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Added job "check_posts" to job store "default"
+INFO:apscheduler.scheduler:Added job "check_repls" to job store "default"
+INFO:apscheduler.scheduler:Scheduler started
+INFO:root:March 12 | 09:41:28 --> Запуск
+INFO:root:March 12 | 09:42:28 --> Проверено
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Added job "check_posts" to job store "default"
+INFO:apscheduler.scheduler:Added job "check_repls" to job store "default"
+INFO:apscheduler.scheduler:Scheduler started
+INFO:root:March 12 | 09:43:13 --> Запуск
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Added job "check_posts" to job store "default"
+INFO:apscheduler.scheduler:Added job "check_repls" to job store "default"
+INFO:apscheduler.scheduler:Scheduler started
+INFO:root:March 12 | 09:44:19 --> Запуск
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Added job "check_posts" to job store "default"
+INFO:apscheduler.scheduler:Added job "check_repls" to job store "default"
+INFO:apscheduler.scheduler:Scheduler started
+INFO:root:March 12 | 09:44:25 --> Запуск
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Added job "check_posts" to job store "default"
+INFO:apscheduler.scheduler:Added job "check_repls" to job store "default"
+INFO:apscheduler.scheduler:Scheduler started
+INFO:root:March 12 | 09:45:08 --> Запуск
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Added job "check_posts" to job store "default"
+INFO:apscheduler.scheduler:Added job "check_repls" to job store "default"
+INFO:apscheduler.scheduler:Scheduler started
+INFO:root:March 12 | 09:45:21 --> Запуск
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Added job "check_posts" to job store "default"
+INFO:apscheduler.scheduler:Added job "check_repls" to job store "default"
+INFO:apscheduler.scheduler:Scheduler started
+INFO:root:March 12 | 09:45:47 --> Запуск
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Added job "check_posts" to job store "default"
+INFO:apscheduler.scheduler:Added job "check_repls" to job store "default"
+INFO:apscheduler.scheduler:Scheduler started
+INFO:root:March 12 | 09:48:30 --> Запуск
+INFO:root:March 12 | 09:48:30 --> Traceback (most recent call last):
+  File "C:\Users\dimka\PycharmProjects\VkSender\main.py", line 161, in <module>
+    uservk_session.auth(token_only=True)
+  File "C:\Users\dimka\PycharmProjects\VkSender\venv\Lib\site-packages\vk_api\vk_api.py", line 169, in auth
+    raise LoginRequired('Login is required to auth')
+vk_api.exceptions.LoginRequired: Login is required to auth
+
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Added job "check_posts" to job store "default"
+INFO:apscheduler.scheduler:Added job "check_repls" to job store "default"
+INFO:apscheduler.scheduler:Scheduler started
+INFO:root:March 12 | 09:53:47 --> Запуск
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Added job "check_posts" to job store "default"
+INFO:apscheduler.scheduler:Added job "check_repls" to job store "default"
+INFO:apscheduler.scheduler:Scheduler started
+INFO:root:March 12 | 09:56:55 --> Запуск
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Added job "check_posts" to job store "default"
+INFO:apscheduler.scheduler:Added job "check_repls" to job store "default"
+INFO:apscheduler.scheduler:Scheduler started
+INFO:root:March 12 | 09:59:06 --> Запуск
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Added job "check_posts" to job store "default"
+INFO:apscheduler.scheduler:Added job "check_repls" to job store "default"
+INFO:apscheduler.scheduler:Scheduler started
+INFO:root:March 12 | 09:59:19 --> Запуск
+INFO:root:March 12 | 09:59:23 --> C:/Users/dimka/PycharmProjects/VkSender/repls/img.jpg
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Added job "check_posts" to job store "default"
+INFO:apscheduler.scheduler:Added job "check_repls" to job store "default"
+INFO:apscheduler.scheduler:Scheduler started
+INFO:root:March 12 | 16:26:21 --> Запуск
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Added job "check_posts" to job store "default"
+INFO:apscheduler.scheduler:Added job "check_repls" to job store "default"
+INFO:apscheduler.scheduler:Scheduler started
+INFO:root:March 12 | 16:26:56 --> Запуск
+INFO:root:March 12 | 16:27:33 --> Traceback (most recent call last):
+  File "C:\Users\dimka\PycharmProjects\VkSender\main.py", line 178, in <module>
+    main()
+  File "C:\Users\dimka\PycharmProjects\VkSender\main.py", line 104, in main
+    if not db.data[peer_id].get("repls"): db.data[peer_id].update({"repls": True})
+           ~~~~~~~^^^^^^^^^
+KeyError: '451418349'
+
+INFO:root:March 12 | 16:27:43 --> Запуск
+INFO:root:March 12 | 16:27:56 --> Проверено
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Added job "check_posts" to job store "default"
+INFO:apscheduler.scheduler:Added job "check_repls" to job store "default"
+INFO:apscheduler.scheduler:Scheduler started
+INFO:root:March 12 | 16:28:26 --> Запуск
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Added job "check_posts" to job store "default"
+INFO:apscheduler.scheduler:Added job "check_repls" to job store "default"
+INFO:apscheduler.scheduler:Scheduler started
+INFO:root:March 12 | 16:29:27 --> Запуск
+INFO:root:March 12 | 16:30:27 --> Проверено
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Added job "check_posts" to job store "default"
+INFO:apscheduler.scheduler:Added job "check_repls" to job store "default"
+INFO:apscheduler.scheduler:Scheduler started
+INFO:root:March 12 | 16:32:35 --> Запуск
+INFO:root:March 12 | 16:33:35 --> Проверено
+INFO:root:March 12 | 16:34:35 --> Проверено
+INFO:root:March 12 | 16:35:35 --> Проверено
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Added job "check_posts" to job store "default"
+INFO:apscheduler.scheduler:Added job "check_repls" to job store "default"
+INFO:apscheduler.scheduler:Scheduler started
+INFO:root:March 12 | 16:35:45 --> Запуск
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Added job "check_posts" to job store "default"
+INFO:apscheduler.scheduler:Added job "check_repls" to job store "default"
+INFO:apscheduler.scheduler:Scheduler started
+INFO:root:March 12 | 16:36:14 --> Запуск
+INFO:root:March 12 | 16:36:40 --> Traceback (most recent call last):
+  File "C:\Users\dimka\PycharmProjects\VkSender\main.py", line 188, in <module>
+    main()
+  File "C:\Users\dimka\PycharmProjects\VkSender\main.py", line 113, in main
+    message=f"Кажется такой группы нет, проверьте чтобы название точно совпадало с названием в расписании (регистр букв не важен), Если вы уверены в правильности ввода, напишите @oltry. \nСписок групп:\n{all_groups_send()}",
+                                                                                                                                                                                                            ^^^^^^^^^^^^^^^^^
+  File "C:\Users\dimka\PycharmProjects\VkSender\lib.py", line 143, in all_groups_send
+    result += f"{c} курс: {c_groups.join(', ')}\n\n"
+                           ^^^^^^^^^^^^^
+AttributeError: 'list' object has no attribute 'join'
+
+INFO:root:March 12 | 16:36:50 --> Запуск
+INFO:root:March 12 | 16:37:14 --> Проверено
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Added job "check_posts" to job store "default"
+INFO:apscheduler.scheduler:Added job "check_repls" to job store "default"
+INFO:apscheduler.scheduler:Scheduler started
+INFO:root:March 12 | 16:37:46 --> Запуск
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Added job "check_posts" to job store "default"
+INFO:apscheduler.scheduler:Added job "check_repls" to job store "default"
+INFO:apscheduler.scheduler:Scheduler started
+INFO:root:March 12 | 16:38:36 --> Запуск
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Added job "check_posts" to job store "default"
+INFO:apscheduler.scheduler:Added job "check_repls" to job store "default"
+INFO:apscheduler.scheduler:Scheduler started
+INFO:root:March 12 | 16:39:14 --> Запуск
+INFO:root:March 12 | 16:39:26 --> Traceback (most recent call last):
+  File "C:\Users\dimka\PycharmProjects\VkSender\main.py", line 178, in <module>
+    main()
+  File "C:\Users\dimka\PycharmProjects\VkSender\main.py", line 116, in main
+    if not db.data[peer_id].get("repls"): db.data[peer_id].update({"repls": True})
+           ~~~~~~~^^^^^^^^^
+KeyError: '451418349'
+
+INFO:root:March 12 | 16:39:36 --> Запуск
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Added job "check_posts" to job store "default"
+INFO:apscheduler.scheduler:Added job "check_repls" to job store "default"
+INFO:apscheduler.scheduler:Scheduler started
+INFO:root:March 12 | 16:40:10 --> Запуск
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Added job "check_posts" to job store "default"
+INFO:apscheduler.scheduler:Added job "check_repls" to job store "default"
+INFO:apscheduler.scheduler:Scheduler started
+INFO:root:March 12 | 16:44:36 --> Запуск
+INFO:root:March 12 | 16:45:36 --> Проверено
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Added job "check_posts" to job store "default"
+INFO:apscheduler.scheduler:Added job "check_repls" to job store "default"
+INFO:apscheduler.scheduler:Scheduler started
+INFO:root:March 12 | 16:46:00 --> Запуск
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Added job "check_posts" to job store "default"
+INFO:apscheduler.scheduler:Added job "check_repls" to job store "default"
+INFO:apscheduler.scheduler:Scheduler started
+INFO:root:March 12 | 16:46:43 --> Запуск
+INFO:root:March 12 | 16:47:43 --> Проверено

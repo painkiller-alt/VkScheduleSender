@@ -5,6 +5,7 @@ from data.constant import *
 import requests
 import os
 import time
+from json_helper import load_json
 
 def getcd():
     path_here = os.getcwd()
@@ -66,6 +67,17 @@ def get_ids(service_token):
 
     return result
 
+def get_last_post(group_id):
+    url = f'https://api.vk.com/method/wall.get?' \
+          f'access_token={service_token}&' \
+          f'v=5.199&' \
+          f'owner_id={-group_id}&' \
+          f'count=1'
+
+    resp = requests.get(url)
+    post_id = resp.json()['response']['items'][0]["id"]
+    return f"https://vk.com/ktskursk?w=wall{-group_id}_{post_id}"
+
 def get_subject(post_url):
     return post_url.split('wall')[-1]
 
@@ -100,3 +112,42 @@ def repost(vk, peerid, attachid):
         vk.messages.send(peer_id=peerid, random_id=generate_random(), message=ads_message, attachment=f"{attachid}")
     except ApiError:
         pass
+
+def get_repls():
+    if os.path.exists(f"{repls_path}/groups.json") and os.path.exists(f"{repls_path}/img.jpg"):
+        groups = load_json(f"{repls_path}/groups.json")
+        img = f"{repls_path}/img.jpg"
+        return groups, img
+
+    return None, None
+
+def remove_repls():
+    os.remove(f"{repls_path}/groups.json")
+    os.remove(f"{repls_path}/img.jpg")
+
+def course(group):
+    for c, c_groups in groups:
+        if group in c_groups:
+            return c
+
+def all_groups():
+    result = []
+    for c_groups in groups.values():
+        result += c_groups
+    return result
+
+def find_group(group):
+    group = group.lower().strip()
+    print(group)
+    for g in all_groups():
+        print(g.lower())
+        if group == g.lower():
+            return g
+
+def all_groups_send():
+    result = ""
+
+    for c, c_groups in groups.items():
+        result += f"{c}: {', '.join(c_groups)}\n\n"
+
+    return result

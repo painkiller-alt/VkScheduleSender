@@ -1,9 +1,5 @@
-import time
-
-import requests
 from vk_api import VkApi
 from vk_api.bot_longpoll import VkBotLongPoll, VkBotEventType
-#from vk_api.exceptions import ApiError
 from keyboards import kboards
 import json
 
@@ -25,6 +21,25 @@ sched = BackgroundScheduler()  # Таймер
 
 urls = get_ids(service_token)
 
+def get_photos_upload_server(group_id):
+    resp = requests.get(
+        f"https://api.vk.com/method/photos.getWallUploadServer?access_token={admin_profile_token}&group_id={group_id}&v=5.199"
+    )
+
+    return resp.json()["response"]["upload_url"]
+
+def save_wall_photo(group_id, server, photo, h):
+    resp = requests.get(
+        f"https://api.vk.com/method/photos.saveWallPhoto?access_token={admin_profile_token}&v=5.199&group_id={group_id}&server={server}&photo={photo}&hash={h}"
+    )
+
+    return resp.json()["response"]
+
+def post(owner_id, message, attachments):
+    requests.get(
+        f"https://api.vk.com/method/wall.post?access_token={admin_profile_token}&v=5.199&owner_id={owner_id}&message={message}&attachments={attachments}"
+    )
+
 def check_posts():
     log("Проверено")
     parse_urls = get_ids(service_token)
@@ -38,8 +53,37 @@ def check_posts():
                 if data.get('course') == course and data.get("timetable"):
                     subject = url.split('=')[1]
                     repost(vk, int(peer_id), subject)
-
 sched.add_job(check_posts, trigger="interval", **check_interval)
+
+def check_repls():
+    repl_groups, img = get_repls()
+
+    if not repl_groups:
+        return
+
+    log(f"Замены получены > {img} / {repl_groups}")
+
+    ### Постим пост в группу с картинкой
+    upload_url = get_photos_upload_server(groupid)
+    resp = requests.post(upload_url, files={'file': open(img, 'rb')}).json()
+    s = save_wall_photo(groupid, resp["server"], resp["photo"], resp["hash"])
+    post(-groupid, "Auto posting test", f"photo{s[0]['owner_id']}_{s[0]['id']}")
+    ###
+
+    log("Пост создан")
+
+    last_post_url = get_last_post(groupid)
+
+    # Делаем рассылку с заменами
+    for peer_id, data in db.data.items():
+        if data.get('group') in repl_groups and data.get("repls"):
+            repost(vk, int(peer_id), last_post_url.split("=")[1])
+
+    log("Рассылка завершена")
+
+    remove_repls()
+
+sched.add_job(check_repls, trigger="interval", **repls_check_interval)
 
 sched.start()
 
@@ -55,29 +99,34 @@ def main():
                     db.save()
                     vk.messages.send(peer_id=peer_id, random_id=generate_random(), message=on_add_message)
             else:
-                # Если написали команду /course
-                if message.text.startswith('/course'):
-                    if not db.data[peer_id].get("repls"): db.data[peer_id].update({"repls": True})
-                    if not db.data[peer_id].get("timetable"): db.data[peer_id].update({"timetable": True})
-                    sp = message.text.split(" ", maxsplit=1)
+                # Если написали команду /group
+                if message.text.startswith('/group'):
+                    sp = message.text.strip().split(" ", maxsplit=1)
                     if len(sp) > 1:
-                        course = sp[1]
+                        group = sp[1]
 
-                        if course not in ["1", "2", "3", "4", "5"]:
-                            vk.messages.send(peer_id=peer_id, random_id=generate_random(),
-                                             message=invalid_syntax_message)
+                        found_group = find_group(group)
+                        if not found_group:
+                            db.data[peer_id] = {}
+                            vk.messages.send(
+                                peer_id=peer_id,
+                                random_id=generate_random(),
+                                message=f"Кажется такой группы нет, проверьте чтобы название точно совпадало с названием в расписании (регистр букв не важен), Если вы уверены в правильности ввода, напишите @oltry. \nСписок групп:\n\n{all_groups_send()}"
+                            )
                         else:
                             if not db.data.get(peer_id):
                                 db.data[peer_id] = {}
 
-                            to_add = "4" if course == "5" else course
-                            db.data[peer_id].update({"course": to_add})
+                            if not db.data[peer_id].get("repls"): db.data[peer_id].update({"repls": True})
+                            if not db.data[peer_id].get("timetable"): db.data[peer_id].update({"timetable": True})
+
+                            db.data[peer_id].update({"group": found_group})
                             db.save()
 
                             if int(peer_id) >= 2000000000:
-                                msg = f"Ваш курс - {course}. Если все верно, можете снять права администратора - я не смогу читать вашу беседу. Когда выйдет новое официальное расписание, я перешлю его сюда. \n\nПересылать:"
+                                msg = f"Ваша группа - {found_group}. Если все верно, можете снять права администратора - я не смогу читать вашу беседу. Когда выйдет новое официальное расписание, я перешлю его сюда. \n\nПересылать:"
                             else:
-                                msg = f"Ваш курс - {course}. Когда выйдет новое официальное расписание, я перешлю его сюда. \n\nПересылать:"
+                                msg = f"Ваша группа - {found_group}. Когда выйдет новое официальное расписание, я перешлю его сюда. \n\nПересылать:"
 
                             msg_id = generate_random()
                             vk.messages.send(
@@ -86,6 +135,10 @@ def main():
                                 message=msg,
                                 keyboard=kboards.menu
                             )
+                    else:
+                        vk.messages.send(peer_id=peer_id, random_id=generate_random(),
+                                         message=invalid_syntax_message)
+
         elif event.type == VkBotEventType.MESSAGE_EVENT:
             vk.messages.sendMessageEventAnswer(
                       event_id=event.object.event_id,
@@ -119,12 +172,13 @@ if __name__ == "__main__":
     while True:
         try:
             log("Запуск")
-            vk_session = VkApi(token=admin_token)
+            vk_session = VkApi(token=admin_token, api_version="5.199")
             longpoll = VkBotLongPoll(vk=vk_session, group_id=groupid)
             vk = vk_session.get_api()
 
-            servicevk_session = VkApi(app_id=51792781, token=service_token, client_secret="WglFxfGsYCVDcswQYTqB")
+            servicevk_session = VkApi(app_id=51792781, token=service_token, client_secret="WglFxfGsYCVDcswQYTqB", api_version="5.199")
             servicevk = vk_session.get_api()
+
             main()
         except Exception as e:
             log(tr.format_exc())

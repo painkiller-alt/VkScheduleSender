@@ -126,7 +126,7 @@ def remove_repls():
     os.remove(f"{repls_path}/img.jpg")
 
 def course(group):
-    for c, c_groups in groups:
+    for c, c_groups in groups.items():
         if group in c_groups:
             return c
 

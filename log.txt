@@ -1195,3 +1195,69 @@ INFO:apscheduler.scheduler:Added job "check_repls" to job store "default"
 INFO:apscheduler.scheduler:Scheduler started
 INFO:root:March 12 | 16:46:43 --> Запуск
 INFO:root:March 12 | 16:47:43 --> Проверено
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Added job "check_posts" to job store "default"
+INFO:apscheduler.scheduler:Added job "check_repls" to job store "default"
+INFO:apscheduler.scheduler:Scheduler started
+INFO:root:March 18 | 08:51:07 --> Запуск
+INFO:root:March 18 | 08:52:07 --> Проверено
+INFO:root:March 18 | 08:52:07 --> https://vk.com/ktskursk?w=wall-145391943_20587
+INFO:root:March 18 | 08:52:07 --> https://vk.com/ktskursk?w=wall-145391943_20586
+INFO:root:March 18 | 08:52:07 --> https://vk.com/ktskursk?w=wall-145391943_20585
+INFO:root:March 18 | 08:52:07 --> https://vk.com/ktskursk?w=wall-145391943_20584
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Added job "check_posts" to job store "default"
+INFO:apscheduler.scheduler:Added job "check_repls" to job store "default"
+INFO:apscheduler.scheduler:Scheduler started
+INFO:root:March 18 | 08:52:54 --> Запуск
+INFO:root:March 18 | 08:53:54 --> Проверено
+INFO:root:March 18 | 08:53:55 --> https://vk.com/ktskursk?w=wall-145391943_20587
+INFO:root:March 18 | 08:53:55 --> https://vk.com/ktskursk?w=wall-145391943_20586
+INFO:root:March 18 | 08:53:55 --> https://vk.com/ktskursk?w=wall-145391943_20585
+INFO:root:March 18 | 08:53:55 --> https://vk.com/ktskursk?w=wall-145391943_20584
+INFO:root:March 18 | 08:54:54 --> Проверено
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Added job "check_posts" to job store "default"
+INFO:apscheduler.scheduler:Added job "check_repls" to job store "default"
+INFO:apscheduler.scheduler:Scheduler started
+INFO:root:March 18 | 08:55:00 --> Запуск
+INFO:root:March 18 | 08:56:00 --> Проверено
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Added job "check_posts" to job store "default"
+INFO:apscheduler.scheduler:Added job "check_repls" to job store "default"
+INFO:apscheduler.scheduler:Scheduler started
+INFO:root:March 18 | 08:56:16 --> Запуск
+INFO:root:March 18 | 08:57:16 --> Проверено
+INFO:root:March 18 | 08:57:17 --> https://vk.com/ktskursk?w=wall-145391943_20587
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Added job "check_posts" to job store "default"
+INFO:apscheduler.scheduler:Added job "check_repls" to job store "default"
+INFO:apscheduler.scheduler:Scheduler started
+INFO:root:March 18 | 08:57:41 --> Запуск
+INFO:root:March 18 | 08:58:41 --> Проверено
+INFO:root:March 18 | 08:58:41 --> https://vk.com/ktskursk?w=wall-145391943_20586
+INFO:root:March 18 | 08:58:41 --> https://vk.com/ktskursk?w=wall-145391943_20585
+INFO:root:March 18 | 08:58:41 --> https://vk.com/ktskursk?w=wall-145391943_20584
+INFO:root:March 18 | 08:59:41 --> Проверено
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Added job "check_posts" to job store "default"
+INFO:apscheduler.scheduler:Added job "check_repls" to job store "default"
+INFO:apscheduler.scheduler:Scheduler started
+INFO:root:March 18 | 09:00:33 --> Запуск
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Added job "check_posts" to job store "default"
+INFO:apscheduler.scheduler:Added job "check_repls" to job store "default"
+INFO:apscheduler.scheduler:Scheduler started
+INFO:root:March 18 | 09:00:48 --> Запуск
+INFO:root:March 18 | 09:01:48 --> Проверено
+INFO:root:March 18 | 09:01:48 --> https://vk.com/ktskursk?w=wall-145391943_20587
+INFO:root:March 18 | 09:01:48 --> https://vk.com/ktskursk?w=wall-145391943_20586
+INFO:root:March 18 | 09:01:48 --> https://vk.com/ktskursk?w=wall-145391943_20585
+INFO:root:March 18 | 09:01:48 --> https://vk.com/ktskursk?w=wall-145391943_20584

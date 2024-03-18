@@ -44,13 +44,13 @@ def check_posts():
     log("Проверено")
     parse_urls = get_ids(service_token)
 
-    for course, url in parse_urls.items():
+    for user_course, url in parse_urls.items():
         if url not in db.parsed:
             log(url)
-            db.parsed[url] = course
+            db.parsed[url] = user_course
             db.save()
             for peer_id, data in db.data.items():
-                if data.get('course') == course and data.get("timetable"):
+                if course(data.get('group'))[0] == user_course and data.get("timetable"):
                     subject = url.split('=')[1]
                     repost(vk, int(peer_id), subject)
 sched.add_job(check_posts, trigger="interval", **check_interval)

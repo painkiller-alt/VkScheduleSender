@@ -67,7 +67,7 @@ def check_repls():
     upload_url = get_photos_upload_server(groupid)
     resp = requests.post(upload_url, files={'file': open(img, 'rb')}).json()
     s = save_wall_photo(groupid, resp["server"], resp["photo"], resp["hash"])
-    post(-groupid, "Auto posting test", f"photo{s[0]['owner_id']}_{s[0]['id']}")
+    post(-groupid, "", f"photo{s[0]['owner_id']}_{s[0]['id']}")
     ###
 
     log("Пост создан")
@@ -82,6 +82,7 @@ def check_repls():
     log("Рассылка завершена")
 
     remove_repls()
+    log("Файлы удалены")
 
 sched.add_job(check_repls, trigger="interval", **repls_check_interval)
 

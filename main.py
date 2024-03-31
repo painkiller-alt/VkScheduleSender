@@ -47,6 +47,7 @@ def check_posts():
 
     if parse_urls:
         calc()
+        log("Изображения отправлены")
 
     for user_course, url in parse_urls.items():
         if url not in db.parsed:

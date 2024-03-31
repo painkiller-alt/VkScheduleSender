@@ -8,6 +8,7 @@ from db import DataBase
 from lib import *
 from log import log, logging
 
+from parse_pictures import calc
 from config import *
 from data.constant import *
 
@@ -43,6 +44,9 @@ def post(owner_id, message, attachments):
 def check_posts():
     log("Проверено")
     parse_urls = get_ids(service_token)
+
+    if parse_urls:
+        calc()
 
     for user_course, url in parse_urls.items():
         if url not in db.parsed:

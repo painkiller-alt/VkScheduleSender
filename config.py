@@ -5,5 +5,6 @@ admin_profile_token = "vk1.a.RvFJlpi8hlvQU8xF9_AXUstYnfLkrdbK36osu5Tf39PxvAMDecX
 root_name = "VkSender"
 
 repls_path = "C:/Users/dimka/PycharmProjects/VkSender/repls"
+img_path_tosend = "C:/Users/dimka/PycharmProjects/KTCbot/data/colleges/КТС/timetable/attachments.json"
 
 log_filename = "log.txt"

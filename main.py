@@ -45,12 +45,10 @@ def check_posts():
     log("Проверено")
     parse_urls = get_ids(service_token)
 
-    if parse_urls:
-        calc()
-        log("Изображения отправлены")
-
+    sended = False
     for user_course, url in parse_urls.items():
         if url not in db.parsed:
+            sended = True
             log(url)
             db.parsed[url] = user_course
             db.save()
@@ -58,6 +56,10 @@ def check_posts():
                 if course(data.get('group'))[0] == user_course and data.get("timetable"):
                     subject = url.split('=')[1]
                     repost(vk, int(peer_id), subject)
+
+    if sended:
+        log("Изображения отправлены")
+        calc()
 sched.add_job(check_posts, trigger="interval", **check_interval)
 
 def check_repls():

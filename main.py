@@ -8,11 +8,13 @@ from db import DataBase
 from lib import *
 from log import log, logging
 
-from parse_pictures import calc
 from config import *
 from data.constant import *
 
 import traceback as tr
+
+from parse_pictures import parse
+
 
 logging.getLogger('apscheduler.executors.default').propagate = False  # Отключение логгинга scheduler-а
 primal_path = getcd()
@@ -59,7 +61,7 @@ def check_posts():
 
     if sended:
         log("Изображения отправлены")
-        calc()
+        parse(test)
 sched.add_job(check_posts, trigger="interval", **check_interval)
 
 def check_repls():
@@ -186,7 +188,6 @@ if __name__ == "__main__":
 
             servicevk_session = VkApi(app_id=51792781, token=service_token, client_secret="WglFxfGsYCVDcswQYTqB", api_version="5.199")
             servicevk = vk_session.get_api()
-
             main()
         except Exception as e:
             log(tr.format_exc())

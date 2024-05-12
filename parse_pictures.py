@@ -1,7 +1,6 @@
 import requests
-
-from config import img_path_tosend
-from json_helper import save_json
+from pymongo.mongo_client import MongoClient
+from pymongo import collection
 
 courses = {
     '1kurs': '1 курс',
@@ -9,6 +8,12 @@ courses = {
     '3kurs': '3 курс',
     '4kurs': '4-5 курс',
 }
+
+
+db_name = "oltry"
+db_pass = "goforwhat"
+
+mongodb_uri = f"mongodb+srv://{db_name}:{db_pass}@cluster0.lgoyzdw.mongodb.net/?retryWrites=true&w=majority"
 
 acces_token = '319e4fed319e4fed319e4fed62328804603319e319e4fed54cd383c178437745c845ee7'
 version_of_vkapi = '5.154'
@@ -76,7 +81,7 @@ settings = {
         0: True,
         1: True,
         2: True,
-        3: True,
+        3: False,
         4: True,
         5: True,
     },
@@ -84,7 +89,7 @@ settings = {
         0: True,
         1: True,
         2: True,
-        3: True,
+        3: False,
         4: True,
         5: True,
     },
@@ -92,7 +97,7 @@ settings = {
         0: True,
         1: True,
         2: True,
-        3: True,
+        3: False,
         4: True,
         5: True,
     },
@@ -100,7 +105,7 @@ settings = {
         0: True,
         1: True,
         2: True,
-        3: True,
+        3: False,
         4: True,
         5: True,
     }
@@ -117,24 +122,48 @@ else:
         '4kurs': 'https://vk.com/ktskursk?w=wall-145391943_19898'
     }
 
-def calc():
+def get_attacments():
     posts_ids = []
     for course, post_url in urls.items():
         posts_ids.append(post_url.split('wall')[-1])
 
-    pics = get_photos(posts_ids)
+    if posts_ids:
+        pics = get_photos(posts_ids)
+    else:
+        raise ValueError("New pictures not found")
 
     to_save = {}
     for course, days in settings.items():
         to_save[course] = {}
-        for day_n, setting in days.items():
-            to_save[course][day_n] = {}
+        day_n = 0
+        for i, setting in days.items():
+            to_save[course][str(i)] = None
             if len(pics[course])-1 < day_n or setting == False:
-                to_save[course][day_n] = None
+                to_save[course][str(i)] = None
             else:
-                to_save[course][day_n] = pics[course][day_n]['url']
+                to_save[course][str(i)] = pics[course][day_n]['url']
+                day_n += 1
 
-    save_json(img_path_tosend, to_save)
+    return to_save
+
+def parse(test=True):
+    client = MongoClient(mongodb_uri)
+
+    if test:
+        db = client.KTCbot_data_test
+    else:
+        db = client.KTCbot_data
+
+    colleges: collection.Collection = db.colleges
+
+    coll = colleges.find_one("КТС")
+
+    coll["attachments"] = get_attacments()
+
+    colleges.update_one(
+        {"_id": f"КТС"},
+        {"$set": coll}
+    )
 
 if __name__ == '__main__':
-    calc()
+    parse(test=True)
